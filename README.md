@@ -9,3 +9,8 @@ SpringBoot application that runs on port 8081 exposes HTTP endpoint (http://loca
     and request body such as: {"username": "shivank09","firstname": "shivank","lastname": "mishra","age": 26}
     
 The application encrypts (using <b>AES symmetric encryption</b>) and transforms to <b>protobuf format</b> (the schema for which is included in the resources folder for reference) and sends it over <b>Kafka topic "merc-benz-topic"</b> (with 1 replica and 1 partition) to back-end-service (<b>not HTTP/HTTPS</b>, as required). Six JUnit test cases have been included which can be run with Spring Boot's Embedded Kafka for use. For your verification, you can run the back-end-service in a separate terminal to see its behaviour of decrypting and storing messages.
+
+# running the app
+
+1. After cloning the repo, run "mvn install" from a terminal and this should generate the runnable jar after running the JUnit tests.
+2. Run "java -jar target/FrontEndService-v0.1.jar"
